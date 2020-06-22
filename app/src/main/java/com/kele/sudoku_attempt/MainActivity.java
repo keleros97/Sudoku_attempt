@@ -1,6 +1,7 @@
 package com.kele.sudoku_attempt;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
             mylist.add(a);
         }
         RecyclerView myGridView = findViewById(R.id.myGridView);
+        myGridView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL));
+        myGridView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         myGridView.setLayoutManager(new GridLayoutManager(this, 9));
         myGridView.setAdapter(new MyGridAdaptor(mylist));
 
